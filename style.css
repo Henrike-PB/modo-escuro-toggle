@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+
+.toggle-btn{
+    display: none;
+    /* none faz com que o elemento fique invisivel */
+}
+
+.toggle-label{
+    width: 60px;
+    height: 30px;
+    background-color: #001f36;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    /* display block fez com que aparecesse a trilha da bolinha */
+}
+
+.toggle-label::before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fbffcd;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.4s ease;
+}
+
+.toggle-btn:checked + .toggle-label{
+    background-color: #79ae92;
+}
+
+.toggle-btn:checked + .toggle-label::before{
+    transform: translateX(30px);
+    /* se movimentando 30px na horizontal */
+
+}
+
+.dark-mode{
+    background-color: #001f36;
+    color: azure;
+}
